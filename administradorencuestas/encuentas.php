@@ -8,6 +8,7 @@
 
 		<title>Express MG</title>
 		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
 
 		<!-- DATE-PICKER -->
@@ -23,7 +24,7 @@
 		<!-- DATE-PICKER -->
 		<script src="../assets/vendor/date-picker/js/datepicker.js"></script>
 		<script src="../assets/vendor/date-picker/js/datepicker.en.js"></script>
-
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 		<script src="../assets/js/main.js"></script>
 	</head>
 	<body>
@@ -77,7 +78,7 @@
 													</div>
 													<div class="form-group row">
 														<div class="col-md-1" style="text-align: center; top: -6px;">
-															<button type="button" class="mb-xs mt-xs mr-xs btn btn-info" onclick="generarlink();"><i class="fa fa-external-link"></i></button>
+															<button type="button" class="mb-xs mt-xs mr-xs btn btn-info" onclick="generarlink();"><i class="fa fa-external-link"></i>Link</button>
 														</div>
 														<div class="col-md-7" style="text-align: center;">
 															<select id="tipencuestas" class="form-control">

@@ -229,7 +229,8 @@
 
             $encuesta = null;
 
-            $encuesta = $this->mysql->executeSQL("INSERT INTO H_ENC (CVE_CIA, H_CVE_ENC, CVE_OFI, NOMBRE, CVE_DEP, CVE_USR, FECHA, FEC_REG, STATUS) VALUES ('".$_SESSION['idcia']."', (SELECT CASE WHEN MAX(H_CVE_ENC) IS NULL THEN 1 ELSE MAX(H_CVE_ENC) + 1 END FROM H_ENC), '".$_SESSION['idofi']."', '".utf8_decode($descr)."', (SELECT E.CVE_DEP FROM USUARIOS U INNER JOIN EMPLEADOS E ON U.CVE_EMP = E.CVE_EMP AND E.STATUS = 'A' AND E.CVE_CIA = '".$_SESSION['idcia']."' WHERE U.STATUS = 'A' AND U.CVE_USR = '".$_SESSION['id']."'), '".$_SESSION['id']."', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'A')", 1);
+            $encuesta = $this->mysql->executeSQL("INSERT INTO H_ENC ( H_CVE_ENC, CVE_OFI, NOMBRE, CVE_DEP, CVE_USR, FECHA, FEC_REG, STATUS) 
+            VALUES ( (SELECT CASE WHEN MAX(H.H_CVE_ENC) IS NULL THEN 1 ELSE MAX(H.H_CVE_ENC) + 1 END FROM H_ENC H), '1', '".utf8_decode($descr)."', 1, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'A')", 1);
 
             if ($encuesta) {
 
