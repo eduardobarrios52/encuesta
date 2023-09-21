@@ -139,34 +139,32 @@
 
             $respuesta = null;
 
-            $respuesta = $this->mysql->executeSQL("SELECT (CLAVE - TIPO) CLAVE, DESCR FROM CATCAT WHERE STS_REG = 'A' AND TIPO = 33100", 0);
+            $respuesta = $this->mysql->executeSQL("SELECT * FROM tipo", 0);
 
             return $respuesta;
         }
 
         public function getTipoRespuesta($response){
 
-            $respuesta = null;
-
-            $respuesta = $this->mysql->executeSQL("SELECT (CLAVE - TIPO) CLAVE FROM CATCAT WHERE STS_REG = 'A' AND TIPO = 33100 AND CLAVE = (TIPO + '".$response."')", 0);
+            $respuesta = $response;
 
             if ($respuesta) {
 
-                if ($respuesta->CLAVE == 1) {
+                if ($respuesta == 1) {
 
                     $respuesta = '<div class="table-responsive">'.
                                     '<table class="table table-striped mb-none" id="table-respuestas">'.
                                         '<thead>'.
                                             '<tr>'.
                                                 '<th>Respuesta</th>'.
-                                                '<th> <button type="button" class="mb-xs mt-xs mr-xs btn btn-success" onclick="agregarRespuesta('.$respuesta->CLAVE.');"><i class="fa fa-plus" style="color: #fff;"></i></button> </th>'.
+                                                '<th> <button type="button" class="mb-xs mt-xs mr-xs btn btn-success" onclick="agregarRespuesta('.$respuesta.');"><i class="fa fa-plus" style="color: #fff;"></i></button> </th>'.
                                             '</tr>'.
                                         '</thead>'.
                                         '<tbody id="tbody-respuestas" data-id="1">'.
                                         '</tbody>'.
                                     '</table>'.
                                 '</div>';
-                } else if ($respuesta->CLAVE == 3) {
+                } else if ($respuesta == 3) {
 
                     $respuesta = '<div class="table-responsive">'.
                                     '<table class="table table-striped mb-none" id="table-respuestas">'.

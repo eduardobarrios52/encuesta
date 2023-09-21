@@ -15,7 +15,7 @@
 		<link rel="stylesheet" href="../assets/vendor/date-picker/css/datepicker.min.css">
 
 		<!-- STYLE CSS -->
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="../assets/css/style.css">
 		<script src="../assets/js/jquery-3.3.1.min.js"></script>
 		
 		<!-- JQUERY STEP -->
@@ -53,7 +53,7 @@
 					</header>
 
 					<div class="row">
-						<div class="col-xs-12">
+						<div class="col-lg-12">
 
 							<section class="panel">
 								<header class="panel-heading">
@@ -68,7 +68,7 @@
 									<form id="form_nominas" class="form-horizontal form-bordered" action="#">
 										<div class="row justify-content-md-center">
 											<div class="show-grid">
-												<div class="col-md-6 col-md-offset-3">
+												<div class="col-md-12 col-md-offset-3">
 													<div class="form-group row">
 														<div class="col-md-12" style="text-align: center;">
 															<label style="font-size: 22px; font-family: revert; padding: 0 0 15px 0; font-weight: bold;">
@@ -77,10 +77,10 @@
 														</div>
 													</div>
 													<div class="form-group row">
-														<div class="col-md-1" style="text-align: center; top: -6px;">
+														<div class="col-md-2" style="text-align: center;">
 															<button type="button" class="mb-xs mt-xs mr-xs btn btn-info" onclick="generarlink();"><i class="fa fa-external-link"></i>Link</button>
 														</div>
-														<div class="col-md-7" style="text-align: center;">
+														<div class="col-md-6" style="text-align: center;">
 															<select id="tipencuestas" class="form-control">
 																<option value='0'>Seleccione la Encuesta...</option>
 																<?php
@@ -112,12 +112,16 @@
 																?>
 															</select>
 														</div>
-														<div class="col-md-4" style="text-align: center; top: -6px;">
-															<button type="button" class="mb-xs mt-xs mr-xs btn btn-success" onclick="agregarEncuesta();"><i class="fa fa-plus"></i>Agregar</button>
-															<button type="button" class="mb-xs mt-xs mr-xs btn btn-warning class-test" onclick="editarEncuesta();" style="display: none;"><i class="fa fa-pencil-square-o"></i>Editar</button>
-															<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger class-test" onclick="eliminarEncuesta();" style="display: none;"><i class="fa fa-trash-o"></i>Eliminar</button>
-														</div>
-														<div class="col-md-2" style="text-align: center; top: -6px;">
+														<div class="col-md-4" style="text-align: center;">
+															<div class="row">
+																<button type="button" class="mb-xs mt-xs mr-xs btn btn-success" onclick="agregarEncuesta();"><i class="fa fa-plus"></i>Agregar</button>
+															</div>
+															<div class="row" style="margin-top: 5px;">
+																<button type="button" class="mb-xs mt-xs mr-xs btn btn-warning class-test" onclick="editarEncuesta();" style="display: none;"><i class="fa fa-pencil-square-o"></i>Editar</button>
+															</div>
+															<div class="row" style="margin-top: 5px;">
+																<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger class-test" onclick="eliminarEncuesta();" style="display: none;"><i class="fa fa-trash-o"></i>Eliminar</button>
+															</div>
 														</div>
 														<a class="mb-xs mt-xs mr-xs modal-basic btn btn-default" href="#modalBasic" id="ModalEncuesta" style="display: none;"></a>
 														<div id="modalBasic" class="modal-block modal-block-success mfp-hide">
@@ -155,17 +159,21 @@
 		</div>
 
 		<!-- Vendor -->
+		<!--
 		<script src="../assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
 		<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
 		<script src="../assets/vendor/nanoscroller/nanoscroller.js"></script>
 		<script src="../assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 		<script src="../assets/vendor/magnific-popup/magnific-popup.js"></script>
 		<script src="../assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
-
+																-->
 		<!-- Specific Page Vendor -->
+		<!--
 		<script src="../assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
 		<script src="../assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+																-->
 		<script src="../vendor/select2/select2.js"></script>
+		<!--
 		<script src="../assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
 		<script src="../assets/vendor/jquery-maskedinput/jquery.maskedinput.js"></script>
 		<script src="../assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
@@ -201,19 +209,19 @@
 
 		<script src="../assets/vendor/pnotify/pnotify.custom.js"></script>
 
-		<!-- Theme Base, Components and Settings -->
+		
 		<script src="../assets/javascripts/theme.js"></script>
 
-		<!-- Theme Custom -->
+		
 		<script src="../assets/javascripts/theme.custom.js"></script>
 
-		<!-- Theme Initialization Files -->
+		
 		<script src="../assets/javascripts/theme.init.js"></script>
 
-		<!-- Examples -->
+		
 		<script src="../assets/javascripts/forms/examples.advanced.form.js"></script>
 		<script src="../assets/javascripts/ui-elements/examples.modals.js"></script>
-		<!-- <script src="../assets/javascripts/ui-elements/examples.charts.js"></script> -->
+		<script src="../assets/javascripts/ui-elements/examples.charts.js"></script> -->
 
 		<script>
 
@@ -288,7 +296,7 @@
 																		'<input type="hidden" id="inputHidden"/>'+
 																	'</div>'+
 																	'<div class="col-sm-2" style="top: -5px;">'+
-																		'<button type="button" class="mb-xs mt-xs mr-xs btn btn-info" id="copyURL"><i class="fa fa-copy" style="color: #fff;"></i></button>'+
+																		'<button type="button" class="mb-xs mt-xs mr-xs btn btn-info" id="copyURL"><i class="fa fa-copy" style="color: #fff;"></i>Copiar</button>'+
 																	'</div>'+
 																'</div>'+
 															'</form>');
@@ -1420,7 +1428,7 @@
 															'<th>Pregunta</th>'+
 															'<th>Tipo</th>'+
 															'<th>Forma</th>'+
-															'<th> <button type="button" class="mb-xs mt-xs mr-xs btn btn-success" onclick="agregarPregunta('+dataID+');"><i class="fa fa-plus"></i></button> </th>'+
+															'<th> <button type="button" class="mb-xs mt-xs mr-xs btn btn-success" onclick="agregarPregunta('+dataID+');"><i class="fa fa-plus"></i>Agregar</button> </th>'+
 														'</tr>'+
 													'</thead>'+
 													'<tbody id="tbody-preguntas">'+
