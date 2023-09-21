@@ -63,7 +63,8 @@
 
             $encuesta = null;
 
-            $encuesta = $this->mysql->executeSQL("SELECT H.H_CVE_ENC FROM H_ENC H INNER JOIN EMPLEADOS E ON E.CVE_DEP = H.CVE_DEP AND E.STATUS = 'A' AND E.CVE_CIA = '".$_SESSION['idcia']."' INNER JOIN USUARIOS U ON U.CVE_EMP = E.CVE_EMP AND U.STATUS = 'A' AND U.CVE_USR = '".$_SESSION['id']."' WHERE H.STATUS = 'A' AND H.CVE_OFI = '".$_SESSION['idofi']."' AND H.CVE_CIA = '".$_SESSION['idcia']."' AND H_CVE_ENC = '".$test."'", 0);
+            $encuesta = $this->mysql->executeSQL("SELECT H.H_CVE_ENC FROM H_ENC H 
+            INNER JOIN EMPLEADOS E ON E.CVE_DEP = H.CVE_DEP AND E.STATUS = 'A' AND E.CVE_CIA = '".$_SESSION['idcia']."' INNER JOIN USUARIOS U ON U.CVE_EMP = E.CVE_EMP AND U.STATUS = 'A' AND U.CVE_USR = '".$_SESSION['id']."' WHERE H.STATUS = 'A' AND H.CVE_OFI = '".$_SESSION['idofi']."' AND H.CVE_CIA = '".$_SESSION['idcia']."' AND H_CVE_ENC = '".$test."'", 0);
 
             if ($encuesta) {
 
@@ -84,7 +85,7 @@
 
             $response = null;
 
-            $preguntas = $this->mysql->executeSQL("UPDATE H_PREG SET NOMBRE = '".utf8_decode($question)."', FEC_REG = CURRENT_TIMESTAMP, CVE_USR = '".$_SESSION['id']."' WHERE STATUS = 'A' AND H_CVE_PREG = '".$idq."'", 1);
+            $preguntas = $this->mysql->executeSQL("UPDATE H_PREG SET NOMBRE = '".utf8_decode($question)."', FEC_REG = CURRENT_TIMESTAMP, CVE_USR = 1 WHERE STATUS = 'A' AND H_CVE_PREG = '".$idq."'", 1);
 
             if ($preguntas) {
 
@@ -106,8 +107,8 @@
 
             $response = null;
 
-            $preguntas = $this->mysql->executeSQL("UPDATE H_PREG SET STATUS = 'B', FEC_REG = CURRENT_TIMESTAMP, CVE_USR = '".$_SESSION['id']."' WHERE STATUS = 'A' AND H_CVE_PREG = '".$idq."'", 1);
-            $respuestas = $this->mysql->executeSQL("UPDATE D_PREG SET STATUS = 'B', FEC_REG = CURRENT_TIMESTAMP, CVE_USR = '".$_SESSION['id']."' WHERE STATUS = 'A' AND H_CVE_PREG = '".$idq."'", 1);
+            $preguntas = $this->mysql->executeSQL("UPDATE H_PREG SET STATUS = 'B', FEC_REG = CURRENT_TIMESTAMP, CVE_USR = 1 WHERE STATUS = 'A' AND H_CVE_PREG = '".$idq."'", 1);
+            $respuestas = $this->mysql->executeSQL("UPDATE D_PREG SET STATUS = 'B', FEC_REG = CURRENT_TIMESTAMP, CVE_USR = 1 WHERE STATUS = 'A' AND H_CVE_PREG = '".$idq."'", 1);
 
             if ($preguntas) {
 
@@ -253,7 +254,7 @@
 
             if ($valide) {
 
-                $encuesta = $this->mysql->executeSQL("UPDATE H_ENC SET NOMBRE = '".utf8_decode($test)."', CVE_USR = '".$_SESSION['id']."', FEC_REG = CURRENT_TIMESTAMP WHERE STATUS = 'A' AND CVE_CIA = '".$_SESSION['idcia']."' AND H_CVE_ENC = '".$ide."'", 1);
+                $encuesta = $this->mysql->executeSQL("UPDATE H_ENC SET NOMBRE = '".utf8_decode($test)."', CVE_USR = 1, FEC_REG = CURRENT_TIMESTAMP WHERE STATUS = 'A' AND H_CVE_ENC = '".$ide."'", 1);
 
                 if ($encuesta) {
 
@@ -280,11 +281,11 @@
 
             if ($valide) {
 
-                $encuesta = $this->mysql->executeSQL("UPDATE H_ENC SET STATUS = 'B', CVE_USR = '".$_SESSION['id']."', FEC_REG = CURRENT_TIMESTAMP WHERE STATUS = 'A' AND CVE_CIA = '".$_SESSION['idcia']."' AND H_CVE_ENC = '".$ide."'", 1);
+                $encuesta = $this->mysql->executeSQL("UPDATE H_ENC SET STATUS = 'B', CVE_USR = 1, FEC_REG = CURRENT_TIMESTAMP WHERE STATUS = 'A' AND H_CVE_ENC = '".$ide."'", 1);
 
                 $preguntas = $this->mysql->executeSQL("SELECT H_CVE_PREG FROM H_PREG WHERE STATUS = 'A' AND H_CVE_ENC = '".$ide."'", 0);
 
-                $pregunta = $this->mysql->executeSQL("UPDATE H_PREG SET STATUS = 'B', CVE_USR = '".$_SESSION['id']."', FEC_REG = CURRENT_TIMESTAMP WHERE STATUS = 'A' AND H_CVE_ENC = '".$ide."'", 1);
+                $pregunta = $this->mysql->executeSQL("UPDATE H_PREG SET STATUS = 'B', CVE_USR = 1, FEC_REG = CURRENT_TIMESTAMP WHERE STATUS = 'A' AND H_CVE_ENC = '".$ide."'", 1);
 
                 if ($preguntas) {
 
@@ -292,11 +293,11 @@
 
                         foreach ($preguntas as $item) {
 
-                            $respuestas = $this->mysql->executeSQL("UPDATE D_PREG SET STATUS = 'B', CVE_USR = '".$_SESSION['id']."', FEC_REG = CURRENT_TIMESTAMP WHERE STATUS = 'A' AND H_CVE_PREG = '".$item->H_CVE_PREG."'", 1);
+                            $respuestas = $this->mysql->executeSQL("UPDATE D_PREG SET STATUS = 'B', CVE_USR = 1, FEC_REG = CURRENT_TIMESTAMP WHERE STATUS = 'A' AND H_CVE_PREG = '".$item->H_CVE_PREG."'", 1);
                         }
                     } else {
 
-                        $respuestas = $this->mysql->executeSQL("UPDATE D_PREG SET STATUS = 'B', CVE_USR = '".$_SESSION['id']."', FEC_REG = CURRENT_TIMESTAMP WHERE STATUS = 'A' AND H_CVE_PREG = '".$preguntas->H_CVE_PREG."'", 1);
+                        $respuestas = $this->mysql->executeSQL("UPDATE D_PREG SET STATUS = 'B', CVE_USR = 1, FEC_REG = CURRENT_TIMESTAMP WHERE STATUS = 'A' AND H_CVE_PREG = '".$preguntas->H_CVE_PREG."'", 1);
                     }
                 }
 
@@ -327,10 +328,12 @@
 
                 if ($valide->TIPO_REG == 3) {
 
-                    $respuesta = $this->mysql->executeSQL("INSERT INTO D_PREG (H_D_PREG, H_CVE_PREG, RESP, CVE_USR, FEC_REG, STATUS, VALOR) VALUES ((SELECT CASE WHEN MAX(H_D_PREG) IS NULL THEN 1 ELSE MAX(H_D_PREG) + 1 END FROM D_PREG), '".$id."', '".utf8_decode($response)."', '".$_SESSION['id']."', CURRENT_TIMESTAMP, 'A', '".$valor."')", 1);
+                    $respuesta = $this->mysql->executeSQL("INSERT INTO D_PREG (H_D_PREG, H_CVE_PREG, RESP, CVE_USR, FEC_REG, STATUS, VALOR) 
+                    VALUES ((SELECT CASE WHEN MAX(D.H_D_PREG) IS NULL THEN 1 ELSE MAX(D.H_D_PREG) + 1 END FROM D_PREG D), '".$id."', '".utf8_decode($response)."', '1', CURRENT_TIMESTAMP, 'A', '".$valor."')", 1);
                 } else {
 
-                    $respuesta = $this->mysql->executeSQL("INSERT INTO D_PREG (H_D_PREG, H_CVE_PREG, RESP, CVE_USR, FEC_REG, STATUS) VALUES ((SELECT CASE WHEN MAX(H_D_PREG) IS NULL THEN 1 ELSE MAX(H_D_PREG) + 1 END FROM D_PREG), '".$id."', '".utf8_decode($response)."', '".$_SESSION['id']."', CURRENT_TIMESTAMP, 'A')", 1);
+                    $respuesta = $this->mysql->executeSQL("INSERT INTO D_PREG (H_D_PREG, H_CVE_PREG, RESP, CVE_USR, FEC_REG, STATUS) VALUES 
+                    ((SELECT CASE WHEN MAX(D.H_D_PREG) IS NULL THEN 1 ELSE MAX(D.H_D_PREG) + 1 END FROM D_PREG D), '".$id."', '".utf8_decode($response)."', '1', CURRENT_TIMESTAMP, 'A')", 1);
                 }
 
                 if ($respuesta) {
@@ -366,10 +369,10 @@
 
                 if ($tipo->TIPO_REG == 3) {
 
-                    $respuestas = $this->mysql->executeSQL("UPDATE D_PREG SET RESP = '".utf8_decode($response)."', VALOR = '".$valor."', CVE_USR = '".$_SESSION['id']."', FEC_REG = CURRENT_TIMESTAMP WHERE STATUS = 'A' AND H_D_PREG = '".$id."'", 1);
+                    $respuestas = $this->mysql->executeSQL("UPDATE D_PREG SET RESP = '".utf8_decode($response)."', VALOR = '".$valor."', CVE_USR = '1', FEC_REG = CURRENT_TIMESTAMP WHERE STATUS = 'A' AND H_D_PREG = '".$id."'", 1);
                 } else {
 
-                    $respuestas = $this->mysql->executeSQL("UPDATE D_PREG SET RESP = '".utf8_decode($response)."', CVE_USR = '".$_SESSION['id']."', FEC_REG = CURRENT_TIMESTAMP WHERE STATUS = 'A' AND H_D_PREG = '".$id."'", 1);
+                    $respuestas = $this->mysql->executeSQL("UPDATE D_PREG SET RESP = '".utf8_decode($response)."', CVE_USR = '1', FEC_REG = CURRENT_TIMESTAMP WHERE STATUS = 'A' AND H_D_PREG = '".$id."'", 1);
                 }
 
                 if ($respuestas) {
@@ -401,7 +404,7 @@
 
             if ($valide) {
 
-                $respuestas = $this->mysql->executeSQL("UPDATE D_PREG SET STATUS = 'B', CVE_USR = '".$_SESSION['id']."', FEC_REG = CURRENT_TIMESTAMP WHERE STATUS = 'A' AND H_D_PREG = '".$id."'", 1);
+                $respuestas = $this->mysql->executeSQL("UPDATE D_PREG SET STATUS = 'B', CVE_USR = '1', FEC_REG = CURRENT_TIMESTAMP WHERE STATUS = 'A' AND H_D_PREG = '".$id."'", 1);
 
                 if ($respuestas) {
 
@@ -430,7 +433,7 @@
 
             $idpreg = $this->mysql->executeSQL("SELECT CASE WHEN MAX(H_CVE_PREG) IS NULL THEN 1 ELSE MAX(H_CVE_PREG) + 1 END MAXIMO FROM H_PREG", 0);
 
-            $pregunta = $this->mysql->executeSQL("INSERT INTO H_PREG (H_CVE_PREG, H_CVE_ENC, NOMBRE, TIPO_REG, CVE_USR, FECHA, FEC_REG, STATUS, VALOR) VALUES ('".$idpreg->MAXIMO."', '".$test."', '".utf8_decode($question)."', '".$tipo."', '".$_SESSION['id']."', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'A', '".$forma."')", 1);
+            $pregunta = $this->mysql->executeSQL("INSERT INTO H_PREG (H_CVE_PREG, H_CVE_ENC, NOMBRE, TIPO_REG, CVE_USR, FECHA, FEC_REG, STATUS, VALOR) VALUES ('".$idpreg->MAXIMO."', '".$test."', '".utf8_decode($question)."', '".$tipo."', '1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'A', '".$forma."')", 1);
 
             if ($pregunta) {
 
@@ -440,10 +443,12 @@
 
                         if ($tipo == 3) {
 
-                            $respuesta = $this->mysql->executeSQL("INSERT INTO D_PREG (H_D_PREG, H_CVE_PREG, RESP, CVE_USR, FEC_REG, STATUS, VALOR) VALUES ((SELECT CASE WHEN MAX(H_D_PREG) IS NULL THEN 1 ELSE MAX(H_D_PREG) + 1 END FROM D_PREG), '".$idpreg->MAXIMO."', '".utf8_decode($reponses[$i]['response'])."', '".$_SESSION['id']."', CURRENT_TIMESTAMP, 'A', '".$reponses[$i]['value']."')", 1);
+                            $respuesta = $this->mysql->executeSQL("INSERT INTO D_PREG (H_D_PREG, H_CVE_PREG, RESP, CVE_USR, FEC_REG, STATUS, VALOR) 
+                            VALUES ((SELECT CASE WHEN MAX(D.H_D_PREG) IS NULL THEN 1 ELSE MAX(D.H_D_PREG) + 1 END FROM D_PREG D), '".$idpreg->MAXIMO."', '".utf8_decode($reponses[$i]['response'])."', '1', CURRENT_TIMESTAMP, 'A', '".$reponses[$i]['value']."')", 1);
                         } else {
 
-                            $respuesta = $this->mysql->executeSQL("INSERT INTO D_PREG (H_D_PREG, H_CVE_PREG, RESP, CVE_USR, FEC_REG, STATUS) VALUES ((SELECT CASE WHEN MAX(H_D_PREG) IS NULL THEN 1 ELSE MAX(H_D_PREG) + 1 END FROM D_PREG), '".$idpreg->MAXIMO."', '".utf8_decode($reponses[$i]['response'])."', '".$_SESSION['id']."', CURRENT_TIMESTAMP, 'A')", 1);
+                            $respuesta = $this->mysql->executeSQL("INSERT INTO D_PREG (H_D_PREG, H_CVE_PREG, RESP, CVE_USR, FEC_REG, STATUS) 
+                            VALUES ((SELECT CASE WHEN MAX(D.H_D_PREG) IS NULL THEN 1 ELSE MAX(D.H_D_PREG) + 1 END FROM D_PREG D), '".$idpreg->MAXIMO."', '".utf8_decode($reponses[$i]['response'])."', '1', CURRENT_TIMESTAMP, 'A')", 1);
                         }
 
                         if (!$respuesta) {
