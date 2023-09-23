@@ -44,7 +44,7 @@
 
             $preguntas = null;
 
-            $preguntas = $this->mysql->executeSQL("SELECT H.H_CVE_PREG, H.NOMBRE, VALOR FROM H_PREG H WHERE H.STATUS = 'A' AND H.H_CVE_ENC = '".$test."'", 0);
+            $preguntas = $this->mysql->executeSQL("SELECT H.H_CVE_PREG, H.NOMBRE, H.VALOR, T.DESCR TIPO FROM H_PREG H INNER JOIN TIPO T ON H.TIPO_REG = T.CLAVE WHERE H.STATUS = 'A' AND H.H_CVE_ENC = '".$test."'", 0);
 
             if ($preguntas) {
 
@@ -157,7 +157,7 @@
                                         '<thead>'.
                                             '<tr>'.
                                                 '<th>Respuesta</th>'.
-                                                '<th> <button type="button" class="mb-xs mt-xs mr-xs btn btn-success" onclick="agregarRespuesta('.$respuesta.');"><i class="fa fa-plus" style="color: #fff;"></i></button> </th>'.
+                                                '<th> <button type="button" class="mb-xs mt-xs mr-xs btn btn-success" onclick="agregarRespuesta('.$respuesta.');"><i class="fa fa-plus" style="color: #fff;"></i>+</button> </th>'.
                                             '</tr>'.
                                         '</thead>'.
                                         '<tbody id="tbody-respuestas" data-id="1">'.
@@ -172,7 +172,7 @@
                                             '<tr>'.
                                                 '<th>Respuesta</th>'.
                                                 '<th>Valor</th>'.
-                                                '<th> <button type="button" class="mb-xs mt-xs mr-xs btn btn-success" onclick="agregarRespuesta('.$respuesta->CLAVE.');"><i class="fa fa-plus" style="color: #fff;"></i></button> </th>'.
+                                                '<th> <button type="button" class="mb-xs mt-xs mr-xs btn btn-success" onclick="agregarRespuesta('.$respuesta->CLAVE.');"><i class="fa fa-plus" style="color: #fff;"></i>+</button> </th>'.
                                             '</tr>'.
                                         '</thead>'.
                                         '<tbody id="tbody-respuestas" data-id="1">'.
@@ -433,7 +433,7 @@
 
             $pregunta = $this->mysql->executeSQL("INSERT INTO H_PREG (H_CVE_PREG, H_CVE_ENC, NOMBRE, TIPO_REG, CVE_USR, FECHA, FEC_REG, STATUS, VALOR) VALUES ('".$idpreg->MAXIMO."', '".$test."', '".utf8_decode($question)."', '".$tipo."', '1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'A', '".$forma."')", 1);
 
-            if ($pregunta) {
+            
 
                 if (count($reponses) > 0) {
 
@@ -449,18 +449,18 @@
                             VALUES ((SELECT CASE WHEN MAX(D.H_D_PREG) IS NULL THEN 1 ELSE MAX(D.H_D_PREG) + 1 END FROM D_PREG D), '".$idpreg->MAXIMO."', '".utf8_decode($reponses[$i]['response'])."', '1', CURRENT_TIMESTAMP, 'A')", 1);
                         }
 
-                        if (!$respuesta) {
+                        /*if (!$respuesta) {
 
                             $preguntaremove = $this->mysql->executeSQL("UPDATE H_PREG SET STATUS = 'B' WHERE H_CVE_PREG = '".$idpreg->MAXIMO."'", 1);
                             $respuestaremove = $this->mysql->executeSQL("UPDATE D_PREG SET STATUS = 'B' WHERE H_CVE_PREG = '".$idpreg->MAXIMO."'", 1);
 
                             return false;
-                        }
+                        }*/
                     }
                 }
 
                 $pregunta = 200;
-            }
+            
 
             return $pregunta;
         }

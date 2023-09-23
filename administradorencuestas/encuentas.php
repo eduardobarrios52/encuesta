@@ -4,7 +4,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+		<!--<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">-->
 
 		<title>Express MG</title>
 		<!-- MATERIAL DESIGN ICONIC FONT -->
@@ -13,19 +13,16 @@
 
 		<!-- DATE-PICKER -->
 		<link rel="stylesheet" href="../assets/vendor/date-picker/css/datepicker.min.css">
+		<link rel="stylesheet" href="../assets/js/jquery-datatables-bs3/assets/css/datatables.css" />
+		<link rel="stylesheet" href="../assets/css/pnotify.custom.css">
+		<link rel="stylesheet" href="../assets/css/magnific-popup.css">
 
 		<!-- STYLE CSS -->
 		<link rel="stylesheet" href="../assets/css/style.css">
+
 		<script src="../assets/js/jquery-3.3.1.min.js"></script>
 		
-		<!-- JQUERY STEP -->
-		<script src="../assets/js/jquery.steps.js"></script>
-
-		<!-- DATE-PICKER -->
-		<script src="../assets/vendor/date-picker/js/datepicker.js"></script>
-		<script src="../assets/vendor/date-picker/js/datepicker.en.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-		<script src="../assets/js/main.js"></script>
+		
 	</head>
 	<body>
 		<div class="wrapper">
@@ -133,7 +130,7 @@
 																</div>
 																<footer class="panel-footer">
 																	<div class="row">
-																		<div class="col-md-12 text-right" id="div-modal-footer">
+																		<div class="col-md-11 text-right" id="div-modal-footer">
 																		</div>
 																	</div>
 																</footer>
@@ -172,6 +169,22 @@
 		<script src="../assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
 		<script src="../assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
 																-->
+																<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+		<script src="../assets/js/jquery-datatables/media/js/jquery.dataTables.js"></script>
+		<script src="../assets/js/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
+		<script src="../assets/js/jquery-datatables-bs3/assets/js/datatables.js"></script>
+		<!-- JQUERY STEP -->
+		<script src="../assets/js/jquery.steps.js"></script>
+
+		<!-- DATE-PICKER -->
+		<script src="../assets/vendor/date-picker/js/datepicker.js"></script>
+		<script src="../assets/vendor/date-picker/js/datepicker.en.js"></script>
+		
+		<script src="../assets/js/main.js"></script>
+		<script src="../assets/js/pnotify.custom.js"></script>
+		<script src="../assets/js/magnific-popup.js"></script>
+		<script src="../assets/js/examples.advanced.form.js"></script>
+		<script src="../assets/js/examples.modals.js"></script>
 		<script src="../vendor/select2/select2.js"></script>
 		<!--
 		<script src="../assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
@@ -818,7 +831,7 @@
 					$('#tbody-respuestas').append('<tr id="tr-response-'+flagArray+'">'+
 													'<td id="td-textresponse-'+flagArray+'"> <input type="text" name="respuesta" id="response" class="form-control" placeholder="Respuesta..."/> </td>'+
 													'<td id="td-valueresponse-'+flagArray+'"> <input type="text" name="valorrespuesta" id="valueresponse" class="form-control" placeholder="Valor de la respuesta..."/> </td>'+
-													'<td id="td-editresponse-'+flagArray+'"> <button type="button" class="mb-xs mt-xs mr-xs btn btn-success" id="addResponse"><i class="fa fa-check" style="color: #fff;"></i></button> </td>'+
+													'<td id="td-editresponse-'+flagArray+'"> <button type="button" class="mb-xs mt-xs mr-xs btn btn-success" id="addResponse"><i class="fa fa-check" style="color: #fff;"></i>Ok</button> </td>'+
 												'</tr>');
 
 					$('#addResponse').unbind('click');
@@ -860,7 +873,7 @@
 
 					$('#tbody-respuestas').append('<tr id="tr-response-'+flagArray+'">'+
 													'<td id="td-textresponse-'+flagArray+'"> <input type="text" name="respuesta" id="response" class="form-control" placeholder="Respuesta..."/> </td>'+
-													'<td id="td-editresponse-'+flagArray+'"> <button type="button" class="mb-xs mt-xs mr-xs btn btn-success" id="addResponse"><i class="fa fa-check" style="color: #fff;"></i></button> </td>'+
+													'<td id="td-editresponse-'+flagArray+'"> <button type="button" class="mb-xs mt-xs mr-xs btn btn-success" id="addResponse"><i class="fa fa-check" style="color: #fff;"></i>Ok</button> </td>'+
 												'</tr>');
 
 					$('#addResponse').unbind('click');
