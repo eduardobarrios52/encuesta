@@ -1,0 +1,17 @@
+[30-Sep-2023 14:54:25 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/mimgcomm/public_html/admin/db_connection.php on line 7
+[30-Sep-2023 16:40:09 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/mimgcomm/public_html/admin/db_connection.php on line 7
+[30-Sep-2023 16:42:53 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/mimgcomm/public_html/admin/db_connection.php on line 7
+[30-Sep-2023 16:43:56 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/mimgcomm/public_html/admin/db_connection.php on line 7
+[30-Sep-2023 16:44:03 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/mimgcomm/public_html/admin/db_connection.php on line 7
+[30-Sep-2023 17:32:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/mimgcomm/public_html/admin/getlineas.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/mimgcomm/public_html/admin/getlineas.php on line 7
+[30-Sep-2023 17:33:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/mimgcomm/public_html/admin/getlineas.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/mimgcomm/public_html/admin/getlineas.php on line 7
+[30-Sep-2023 17:34:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/mimgcomm/public_html/admin/getlineas.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/mimgcomm/public_html/admin/getlineas.php on line 7
