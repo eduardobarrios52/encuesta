@@ -290,7 +290,7 @@
 
 	<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
-<!--
+	<!--
 	<script src="../assets/js/main.js"></script>
 	<script src="../assets/js/pnotify.custom.js"></script>
 	<script src="../assets/js/magnific-popup.js"></script>
@@ -298,55 +298,55 @@
 	<script src="../assets/js/examples.modals.js"></script>
 	
 														-->
-														<script src="../vendor/select2/select2.js"></script>
-		<script src="../assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
-		<script src="../assets/vendor/jquery-maskedinput/jquery.maskedinput.js"></script>
-		<script src="../assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
-		<script src="../assets/vendor/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
-		<script src="../assets/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
-		<script src="../assets/vendor/fuelux/js/spinner.js"></script>
-		<script src="../assets/vendor/dropzone/dropzone.js"></script>
-		<script src="../assets/vendor/bootstrap-markdown/js/markdown.js"></script>
-		<script src="../assets/vendor/bootstrap-markdown/js/to-markdown.js"></script>
-		<script src="../assets/vendor/bootstrap-markdown/js/bootstrap-markdown.js"></script>
-		<script src="../assets/vendor/codemirror/lib/codemirror.js"></script>
-		<script src="../assets/vendor/codemirror/addon/selection/active-line.js"></script>
-		<script src="../assets/vendor/codemirror/addon/edit/matchbrackets.js"></script>
-		<script src="../assets/vendor/codemirror/mode/javascript/javascript.js"></script>
-		<script src="../assets/vendor/codemirror/mode/xml/xml.js"></script>
-		<script src="../assets/vendor/codemirror/mode/htmlmixed/htmlmixed.js"></script>
-		<script src="../assets/vendor/codemirror/mode/css/css.js"></script>
-		<script src="../assets/vendor/summernote/summernote.js"></script>
-		<script src="../assets/vendor/bootstrap-maxlength/bootstrap-maxlength.js"></script>
-		<script src="../assets/vendor/ios7-switch/ios7-switch.js"></script>
-		<script src="../assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
-		<script src="../assets/vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
-		<script src="../assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
+	<script src="../vendor/select2/select2.js"></script>
+	<script src="../assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+	<script src="../assets/vendor/jquery-maskedinput/jquery.maskedinput.js"></script>
+	<script src="../assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+	<script src="../assets/vendor/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+	<script src="../assets/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+	<script src="../assets/vendor/fuelux/js/spinner.js"></script>
+	<script src="../assets/vendor/dropzone/dropzone.js"></script>
+	<script src="../assets/vendor/bootstrap-markdown/js/markdown.js"></script>
+	<script src="../assets/vendor/bootstrap-markdown/js/to-markdown.js"></script>
+	<script src="../assets/vendor/bootstrap-markdown/js/bootstrap-markdown.js"></script>
+	<script src="../assets/vendor/codemirror/lib/codemirror.js"></script>
+	<script src="../assets/vendor/codemirror/addon/selection/active-line.js"></script>
+	<script src="../assets/vendor/codemirror/addon/edit/matchbrackets.js"></script>
+	<script src="../assets/vendor/codemirror/mode/javascript/javascript.js"></script>
+	<script src="../assets/vendor/codemirror/mode/xml/xml.js"></script>
+	<script src="../assets/vendor/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+	<script src="../assets/vendor/codemirror/mode/css/css.js"></script>
+	<script src="../assets/vendor/summernote/summernote.js"></script>
+	<script src="../assets/vendor/bootstrap-maxlength/bootstrap-maxlength.js"></script>
+	<script src="../assets/vendor/ios7-switch/ios7-switch.js"></script>
+	<script src="../assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
+	<script src="../assets/vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
+	<script src="../assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
 
-		<script src="../assets/vendor/jquery-appear/jquery.appear.js"></script>
-		<script src="../assets/vendor/jquery-easypiechart/jquery.easypiechart.js"></script>
-		<script src="../assets/vendor/flot/jquery.flot.js"></script>
-		<script src="../assets/vendor/flot-tooltip/jquery.flot.tooltip.js"></script>
-		<script src="../assets/vendor/flot/jquery.flot.pie.js"></script>
-		<script src="../assets/vendor/flot/jquery.flot.categories.js"></script>
-		<script src="../assets/vendor/flot/jquery.flot.resize.js"></script>
-		<script src="../assets/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+	<script src="../assets/vendor/jquery-appear/jquery.appear.js"></script>
+	<script src="../assets/vendor/jquery-easypiechart/jquery.easypiechart.js"></script>
+	<script src="../assets/vendor/flot/jquery.flot.js"></script>
+	<script src="../assets/vendor/flot-tooltip/jquery.flot.tooltip.js"></script>
+	<script src="../assets/vendor/flot/jquery.flot.pie.js"></script>
+	<script src="../assets/vendor/flot/jquery.flot.categories.js"></script>
+	<script src="../assets/vendor/flot/jquery.flot.resize.js"></script>
+	<script src="../assets/vendor/jquery-sparkline/jquery.sparkline.js"></script>
 
-		<script src="../assets/vendor/pnotify/pnotify.custom.js"></script>
+	<script src="../assets/vendor/pnotify/pnotify.custom.js"></script>
 
-		
-		<script src="../assets/javascripts/theme.js"></script>
 
-		
-		<script src="../assets/javascripts/theme.custom.js"></script>
+	<script src="../assets/javascripts/theme.js"></script>
 
-		
-		<script src="../assets/javascripts/theme.init.js"></script>
 
-		
-		<script src="../assets/javascripts/forms/examples.advanced.form.js"></script>
-		<script src="../assets/javascripts/ui-elements/examples.modals.js"></script>
-		<script src="../assets/javascripts/ui-elements/examples.charts.js"></script>
+	<script src="../assets/javascripts/theme.custom.js"></script>
+
+
+	<script src="../assets/javascripts/theme.init.js"></script>
+
+
+	<script src="../assets/javascripts/forms/examples.advanced.form.js"></script>
+	<script src="../assets/javascripts/ui-elements/examples.modals.js"></script>
+	<script src="../assets/javascripts/ui-elements/examples.charts.js"></script>
 
 	<script>
 		let arrayResponse = [];
