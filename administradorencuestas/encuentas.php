@@ -175,7 +175,7 @@
 								<form id="form_nominas" class="form-horizontal form-bordered" action="#">
 									<div class="row justify-content-md-center">
 										<div class="show-grid">
-											<div class="col-md-12 col-md-offset-3">
+											<div class="col-md-12">
 												<div class="form-group row">
 													<div class="col-md-12" style="text-align: center;">
 														<label style="font-size: 22px; font-family: revert; padding: 0 0 15px 0; font-weight: bold;">
@@ -184,8 +184,16 @@
 													</div>
 												</div>
 												<div class="form-group row">
-													<div class="col-md-2" style="text-align: center;">
-														<button type="button" class="mb-xs mt-xs mr-xs btn btn-info" onclick="generarlink();"><i class="fa fa-external-link"></i>Link</button>
+													<div class="col-md-4" style="text-align: center;">
+														<div class="row">
+															<button type="button" class="mb-xs mt-xs mr-xs btn btn-success" onclick="agregarEncuesta();"><i class="fa fa-plus"></i>Agregar</button>
+														</div>
+														<div class="row" style="margin-top: 5px;">
+															<button type="button" class="mb-xs mt-xs mr-xs btn btn-warning class-test" onclick="editarEncuesta();" style="display: none;"><i class="fa fa-pencil-square-o"></i>Editar</button>
+														</div>
+														<div class="row" style="margin-top: 5px;">
+															<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger class-test" onclick="eliminarEncuesta();" style="display: none;"><i class="fa fa-trash-o"></i>Eliminar</button>
+														</div>
 													</div>
 													<div class="col-md-6" style="text-align: center;">
 														<select id="tipencuestas" class="form-control">
@@ -221,17 +229,10 @@
 															?>
 														</select>
 													</div>
-													<div class="col-md-4" style="text-align: center;">
-														<div class="row">
-															<button type="button" class="mb-xs mt-xs mr-xs btn btn-success" onclick="agregarEncuesta();"><i class="fa fa-plus"></i>Agregar</button>
-														</div>
-														<div class="row" style="margin-top: 5px;">
-															<button type="button" class="mb-xs mt-xs mr-xs btn btn-warning class-test" onclick="editarEncuesta();" style="display: none;"><i class="fa fa-pencil-square-o"></i>Editar</button>
-														</div>
-														<div class="row" style="margin-top: 5px;">
-															<button type="button" class="mb-xs mt-xs mr-xs btn btn-danger class-test" onclick="eliminarEncuesta();" style="display: none;"><i class="fa fa-trash-o"></i>Eliminar</button>
-														</div>
+													<div class="col-md-2" style="text-align: center;">
+														<button type="button" class="mb-xs mt-xs mr-xs btn btn-info" onclick="generarlink();"><i class="fa fa-external-link"></i>Link</button>
 													</div>
+													
 													<a class="mb-xs mt-xs mr-xs modal-basic btn btn-default" href="#modalBasic" id="ModalEncuesta" style="display: none;"></a>
 													<div id="modalBasic" class="modal-block modal-block-success mfp-hide">
 														<section class="panel">
