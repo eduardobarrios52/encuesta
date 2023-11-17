@@ -7,7 +7,7 @@
     use Src\Controller\EncuestasController;
     $encuestas = new EncuestasController();
 
-    if ($_POST['type'] == 3) {
+    if ($_POST['type'] !== "1") {
 
         if (isset($_POST['id']) AND isset($_POST['response']) AND is_numeric($_POST['id']) AND isset($_POST['valor'])) {
 

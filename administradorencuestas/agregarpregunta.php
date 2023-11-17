@@ -9,7 +9,7 @@
 
     if (isset($_POST['test']) AND isset($_POST['question']) AND isset($_POST['tipo']) AND is_numeric($_POST['test']) AND is_numeric($_POST['tipo'])) {
 
-        if ($_POST['tipo'] == 3) {
+        if ($_POST['tipo'] == 1) {
 
             $response = $encuestas->agregarPregunta($_POST['question'], Array(), $_POST['tipo'], $_POST['test'], 0);
         } else {

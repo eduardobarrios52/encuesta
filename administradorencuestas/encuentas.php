@@ -279,18 +279,10 @@
 	<script src="../assets/vendor/jquery-autosize/jquery.autosize.js"></script>
 	<script src="../assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
 
-	<!-- Theme Base, Components and Settings -->
-	<script src="../assets/javascripts/theme.js"></script>
-
-	<!-- Theme Custom -->
-	<script src="../assets/javascripts/theme.custom.js"></script>
-
-	<!-- Theme Initialization Files -->
-	<script src="../assets/javascripts/theme.init.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 
-	<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+	<!--<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>-->
 	<!--
 	<script src="../assets/js/main.js"></script>
 	<script src="../assets/js/pnotify.custom.js"></script>
@@ -344,7 +336,7 @@
 
 	<script src="../assets/javascripts/theme.init.js"></script>
 
-
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script src="../assets/javascripts/forms/examples.advanced.form.js"></script>
 	<script src="../assets/javascripts/ui-elements/examples.modals.js"></script>
 	<script src="../assets/javascripts/ui-elements/examples.charts.js"></script>
@@ -957,7 +949,7 @@
 
 			const flagArray = $('#tbody-respuestas').attr('data-id');
 
-			if (tipo == 3) {
+			if (tipo !== 1) {
 
 				$('#tbody-respuestas').append('<tr id="tr-response-' + flagArray + '">' +
 					'<td id="td-textresponse-' + flagArray + '"> <input type="text" name="respuesta" id="response" class="form-control" placeholder="Respuesta..."/> </td>' +
