@@ -198,10 +198,11 @@
             $response = null;
 
             $preguntas = $this->mysql->executeSQL("SELECT H_CVE_PREG, NOMBRE FROM H_PREG WHERE STATUS = 'A' AND TIPO_REG <> 2 AND H_CVE_PREG = '".$idq."'", 0);
+            
 
             if ($preguntas) {
 
-                $respuestas = $this->mysql->executeSQL("SELECT H.H_D_PREG, COUNT(H.H_D_PREG) TOTAL, D.RESP FROM H_RESP H INNER JOIN D_PREG D ON H.H_D_PREG = D.H_D_PREG AND D.STATUS = 'A' WHERE H.STATUS = 'A' AND H.H_CVE_PREG = '".$idq."' GROUP BY H.H_D_PREG", 0);
+                $respuestas = $this->mysql->executeSQL("SELECT H.H_CVE_PREG, D.RESP,COUNT(D.RESP) TOTAL FROM H_PREG H INNER JOIN R_PREG D ON H.H_CVE_PREG = D.H_CVE_PREG AND D.STATUS = 'A' WHERE H.STATUS = 'A' AND H.H_CVE_PREG = '".$idq."' GROUP BY D.RESP", 0);
 
                 if ($respuestas) {
 
@@ -572,7 +573,7 @@
 
                     $obj = new \stdClass();
 
-                    $obj->H_D_PREG = $item->H_D_PREG;
+                    $obj->H_D_PREG = $item->H_CVE_PREG;
                     $obj->RESP = trim($item->RESP);
                     $obj->VALOR = $item->TOTAL;
                     $obj->PORCENTAJE = number_format(floatval(intval($item->TOTAL) * 100) / intval($TOTAL), 2, '.', '');
@@ -586,7 +587,7 @@
 
                 $response = new \stdClass();
 
-                $response->H_D_PREG = $data->H_D_PREG;
+                $response->H_D_PREG = $data->H_CVE_PREG;
                 $response->RESP = trim($data->RESP);
                 $response->VALOR = $data->TOTAL;
                 $response->PORCENTAJE = 100.00;
