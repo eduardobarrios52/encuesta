@@ -197,7 +197,8 @@
 
             $response = null;
 
-            $preguntas = $this->mysql->executeSQL("SELECT H_CVE_PREG, NOMBRE FROM H_PREG WHERE STATUS = 'A' AND TIPO_REG <> 2 AND H_CVE_PREG = '".$idq."'", 0);
+            //$preguntas = $this->mysql->executeSQL("SELECT H_CVE_PREG, NOMBRE FROM H_PREG WHERE STATUS = 'A' AND TIPO_REG <> 2 AND H_CVE_PREG = '".$idq."'", 0);
+            $preguntas = $this->mysql->executeSQL("SELECT H_CVE_PREG, NOMBRE FROM H_PREG WHERE STATUS = 'A' AND H_CVE_PREG = '".$idq."'", 0);
             
 
             if ($preguntas) {
